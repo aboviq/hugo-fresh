@@ -5,7 +5,7 @@
   <div class="sidebar-header">
     <img src="{{ printf "/images/logos/%s.svg" $logo | relURL }}">
     <a class="sidebar-close" href="javascript:void(0);">
-      <i class="fa fa-cancel"></i>
+      <i class="fas fa-cancel"></i>
     </a>
   </div>
   <div class="inner">
@@ -13,7 +13,7 @@
       {{- range $sections }}
       <li class="have-children">
         <a href="#">
-          <span class="fa fa-{{ .icon }}"></span>
+          <span class="fas fa-{{ .icon }}"></span>
           {{ .title }}
         </a>
         <ul>

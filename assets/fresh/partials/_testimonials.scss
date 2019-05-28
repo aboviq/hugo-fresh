@@ -42,21 +42,22 @@ Testimonials Styles
   }
   blockquote:before,
   blockquote:after {
-    font-family: 'FontAwesome';
+    font-family: 'Font Awesome 5 Free';
     content: '\f10d';
     position: absolute;
     font-size: 20px;
+    font-weight: 900;
     opacity: 0.3;
     font-style: normal;
   }
   blockquote:before {
-    top: 35px;
+    top: 15px;
     left: 20px;
   }
   blockquote:after {
     content: '\f10e';
     right: 20px;
-    bottom: 35px;
+    bottom: 55px;
   }
   .author {
     margin: 0;
