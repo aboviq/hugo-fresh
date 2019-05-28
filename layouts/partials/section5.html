@@ -1,8 +1,12 @@
-<section class="section section-light-grey is-medium">
+{{- $section5 := .Site.Params.section5 }}
+{{- $id       := index $section5 "id" }}
+{{- $title    := index $section5 "title" }}
+{{- $subtitle := index $section5 "subtitle" }}
+<section class="section section-light-grey is-medium"{{ if $id }} id="{{ $id }}"{{ end }}>
   <div class="container">
     <div class="title-wrapper has-text-centered">
-      <h2 class="title is-2 is-spaced">Drop us a line or two </h2>
-      <h3 class="subtitle is-5 is-muted">We'd love to hear from you</h3>
+      <h2 class="title is-2 is-spaced">{{default "Drop us a line or two" $title}}</h2>
+      <h3 class="subtitle is-5 is-muted">{{default "We'd love to hear from you" $subtitle}}</h3>
       <div class="divider is-centered"></div>
     </div>
 
