@@ -2,9 +2,10 @@
 {{- $title      := index $section3 "title" }}
 {{- $subtitle   := index $section3 "subtitle" }}
 {{- $image      := index $section3 "image" }}
+{{- $id         := index $section3 "id" }}
 {{- $buttonText := index $section3 "buttontext" }}
 {{- $buttonLink := index $section3 "buttonlink" }}
-<section class="section section-feature-grey is-medium">
+<section class="section section-feature-grey is-medium"{{ if $id }} id="{{ $id }}"{{ end }}>
   <div class="container">
     <div class="columns">
       <div class="column is-10 is-offset-1">
