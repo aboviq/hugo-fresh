@@ -48,14 +48,19 @@ $(document).ready(function(){
         });
     }
 
+    var targetScrollOffset = 0;
+
     //Navbar Clone
     if ($('#navbar-clone').length) {
+        var navbarHeight = $('.navbar').height();
         $(window).scroll(function() {    // this will work when your window scrolled.
             var height = $(window).scrollTop();  //getting the scrolling height of window
             if(height  > 50) {
                 $("#navbar-clone").addClass('is-active');
+                targetScrollOffset = navbarHeight;
             } else{
                 $("#navbar-clone").removeClass('is-active');
+                targetScrollOffset = 0;
             }
         });
     }
@@ -125,7 +130,7 @@ $(document).ready(function(){
                 // Only prevent default if animation is actually gonna happen
                 event.preventDefault();
                 $('html, body').animate({
-                    scrollTop: target.offset().top
+                    scrollTop: target.offset().top - targetScrollOffset
                 }, 550, function() {
                     // Callback after animation
                     // Must change focus!
