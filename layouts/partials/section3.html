@@ -3,11 +3,19 @@
 {{- $subtitle   := index $section3 "subtitle" }}
 {{- $image      := index $section3 "image" }}
 {{- $images     := index $section3 "images" }}
+{{- $titleFirst := index $section3 "titlefirst" }}
 {{- $id         := index $section3 "id" }}
 {{- $buttonText := index $section3 "buttontext" }}
 {{- $buttonLink := index $section3 "buttonlink" }}
 <section class="section section-feature-grey is-medium"{{ if $id }} id="{{ $id }}"{{ end }}>
   <div class="container">
+    {{- if $titleFirst }}
+    <div class="title-wrapper has-text-centered mb-40">
+      <h2 class="title is-2">{{ $title }}</h2>
+      <h3 class="subtitle is-5 is-muted">{{ $subtitle }}</h3>
+    </div>
+    {{- end }}
+
     <div class="columns is-multiline is-centered is-mobile">
       {{ if $image }}
       <div class="column is-10 is-offset-1">
@@ -26,10 +34,12 @@
       {{ end }}
     </div>
 
+    {{- if not $titleFirst }}
     <div class="title-wrapper has-text-centered">
       <h2 class="title is-2">{{ $title }}</h2>
       <h3 class="subtitle is-5 is-muted">{{ $subtitle }}</h3>
     </div>
+    {{- end }}
 
     <p class="has-text-centered mt-20">
       <a class="button cta is-large rounded secondary-btn raised" href="{{ $buttonLink }}">
