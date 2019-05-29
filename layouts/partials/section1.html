@@ -19,8 +19,11 @@
             <div class="card-title">
               <h4>{{ .title }}</h4>
             </div>
-            <div class="card-icon">
-                <img src="{{ printf "/images/illustrations/icons/%s.svg" .icon | relURL }}">
+            <div class="card-icon has-text-centered">
+              <figure class="image is-128x128">
+                {{ if .icon }}<img src="{{ printf "/images/illustrations/icons/%s.svg" .icon | relURL }}">
+                {{ else if .fontawesome }}<i style="margin-top: 2.25rem{{ if .color }}; color: {{ .color }}{{ end }}" class="is-size-1 fas fa-{{ .fontawesome }}"></i>{{ end }}
+              </figure>
             </div>
             <div class="card-text">
                 <p>{{ .text }}</p>
