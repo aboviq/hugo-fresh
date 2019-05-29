@@ -29,6 +29,16 @@
         <div class="has-text-centered">
           <img{{ if .cssclass }} class="{{ .cssclass }}"{{ end }} src="{{ printf "/images/%s" .image | relURL }}" alt="{{ .alt }}">
         </div>
+        {{ if or .title .description }}
+        <div class="content mt-20">
+          {{ if .title }}
+          <h4>{{ .title }}</h4>
+          {{ end }}
+          {{ if .description }}
+          <p class="muted-grey">{{ .description }}</p>
+          {{ end }}
+        </div>
+        {{ end }}
       </div>
       {{- end }}
       {{ end }}
