@@ -123,8 +123,8 @@ $(function(){
             target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
             // Does a scroll target exist?
             if (target.length) {
-                // Only prevent default if animation is actually gonna happen
-                event.preventDefault();
+                // Push new hash to history:
+                history.pushState({}, '', this.hash);
                 $('html, body').animate({
                     scrollTop: target.offset().top - targetScrollOffset
                 }, 550, function() {
