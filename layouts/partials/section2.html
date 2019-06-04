@@ -1,8 +1,10 @@
-{{- $section2 := .Site.Params.section2 }}
-{{- $title    := index $section2 "title" }}
-{{- $subtitle := index $section2 "subtitle" }}
-{{- $features := index $section2 "features" }}
-{{- $id       := index $section2 "id" }}
+{{- $section2   := .Site.Params.section2 }}
+{{- $title      := index $section2 "title" }}
+{{- $subtitle   := index $section2 "subtitle" }}
+{{- $buttonText := index $section2 "buttontext" }}
+{{- $buttonLink := index $section2 "buttonlink" }}
+{{- $features   := index $section2 "features" }}
+{{- $id         := index $section2 "id" }}
 <section class="section is-medium"{{ if $id }} id="{{ $id }}"{{ end }}>
   <div class="container">
     <div class="columns">
@@ -33,5 +35,13 @@
         {{- end }}
       </div>
     </div>
+
+    {{ if $buttonText }}
+    <p class="has-text-centered mt-40">
+      <a class="button cta is-large rounded accent-btn raised" href="{{ $buttonLink }}">
+        {{ $buttonText }}
+      </a>
+    </p>
+    {{ end }}
   </div>
 </section>
