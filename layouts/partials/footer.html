@@ -40,7 +40,7 @@
               <div class="level-left">
                 {{- range $socialMedia }}
                 <a class="level-item" href="{{ .link }}">
-                  <span class="icon"><i class="fab fa-{{ .icon }}"></i></span>
+                  <span class="icon"><i class="fab fa-lg fa-{{ .icon }}"></i></span>
                 </a>
                 {{- end }}
               </div>
@@ -48,7 +48,7 @@
 
             {{- if $aboviqLogo }}
             <a href="https://www.aboviq.com" target="_blank">
-              <img src="{{ "/images/logos/aboviq-logo.svg" | relURL }}" alt="Aboviq AB" width="128" height="24">
+              <img class="aboviq-footer-logo" src="{{ "/images/logos/aboviq-logo.svg" | relURL }}" alt="Aboviq AB" width="110">
             </a>
             {{- end }}
           </div>
