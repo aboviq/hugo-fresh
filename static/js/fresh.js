@@ -52,15 +52,13 @@ $(function(){
 
     //Navbar Clone
     if ($('#navbar-clone').length) {
-        var navbarHeight = $('.navbar').height();
+        targetScrollOffset = $('.navbar').height();
         $(window).scroll(function() {    // this will work when your window scrolled.
             var height = $(window).scrollTop();  //getting the scrolling height of window
             if(height  > 50) {
                 $("#navbar-clone").addClass('is-active');
-                targetScrollOffset = navbarHeight;
             } else{
                 $("#navbar-clone").removeClass('is-active');
-                targetScrollOffset = 0;
             }
         });
     }
